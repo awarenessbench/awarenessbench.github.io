@@ -1,39 +1,29 @@
 /* ─────────────────────────────────────────────────────────────────────────────
-   AwarenessBench · paper landing page
-   Minimal, readable academic style (Nerfies-inspired but simpler).
+   AwarenessBench · Coming Soon
    ───────────────────────────────────────────────────────────────────────────── */
 
 :root {
-  --bg:          #ffffff;
-  --bg-alt:      #f7f7f8;
-  --text:        #1a1a1a;
-  --muted:       #666666;
-  --accent:      #2257d8;
-  --accent-dark: #1e4ab8;
-  --border:      #e5e5e7;
-  --max-w:       1100px;
-  --narrow-w:    780px;
+  --bg:     #ffffff;
+  --text:   #1a1a1a;
+  --muted:  #666666;
+  --accent: #2257d8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg:          #0f1115;
-    --bg-alt:      #151821;
-    --text:        #e8e9ee;
-    --muted:       #9ea3b0;
-    --accent:      #6691ff;
-    --accent-dark: #8cb2ff;
-    --border:      #242733;
+    --bg:     #0f1115;
+    --text:   #e8e9ee;
+    --muted:  #9ea3b0;
+    --accent: #6691ff;
   }
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html, body { height: 100%; }
 
 body {
   margin: 0;
-  padding: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
                Arial, "Noto Sans", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
                sans-serif;
@@ -48,210 +38,59 @@ body {
 a {
   color: var(--accent);
   text-decoration: none;
-  transition: color 0.15s ease;
 }
 
 a:hover {
-  color: var(--accent-dark);
   text-decoration: underline;
 }
 
 .container {
-  max-width: var(--max-w);
+  max-width: 780px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
-.container.narrow {
-  max-width: var(--narrow-w);
-}
+/* ── Coming soon layout ───────────────────────────────────────────────────── */
 
-/* ── Hero ─────────────────────────────────────────────────────────────────── */
-
-.hero {
-  padding: 72px 0 56px;
+.coming-soon {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  border-bottom: 1px solid var(--border);
+  padding: 40px 0;
 }
 
-.venue {
+.eyebrow {
   color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
   font-size: 0.85rem;
-  margin: 0 0 16px;
+  margin: 0 0 28px;
 }
 
-.title {
+.soon-title {
   font-family: Georgia, "Times New Roman", serif;
   font-weight: 700;
-  font-size: clamp(1.75rem, 3vw, 2.6rem);
-  line-height: 1.25;
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   margin: 0 0 24px;
-  letter-spacing: -0.01em;
 }
 
-.title .subtitle {
-  font-size: 0.7em;
-  font-weight: 400;
-  color: var(--muted);
-}
-
-.authors {
-  margin: 20px 0 8px;
-  font-size: 1.05rem;
-}
-
-.author {
-  display: inline-block;
-  margin: 0 10px;
-  white-space: nowrap;
-}
-
-.author sup {
-  font-size: 0.7em;
-  color: var(--muted);
-}
-
-.affiliations {
-  color: var(--muted);
-  font-size: 0.92rem;
-  margin: 0 0 36px;
-}
-
-.affiliations span {
-  margin: 0 12px;
-  white-space: nowrap;
-}
-
-.affiliations .corr {
-  color: var(--muted);
-}
-
-/* ── Buttons ──────────────────────────────────────────────────────────────── */
-
-.links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-  margin-top: 24px;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 18px;
-  background: var(--text);
-  color: var(--bg);
-  border-radius: 999px;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: transform 0.12s ease, opacity 0.15s ease;
-}
-
-.button:hover {
-  text-decoration: none;
-  color: var(--bg);
-  transform: translateY(-1px);
-  opacity: 0.88;
-}
-
-.button .icon {
-  font-size: 1em;
-}
-
-/* ── Sections ─────────────────────────────────────────────────────────────── */
-
-.section {
-  padding: 56px 0;
-}
-
-.section.alt {
-  background: var(--bg-alt);
-}
-
-.section h2 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 1.6rem;
-  margin: 0 0 20px;
-  letter-spacing: -0.01em;
-}
-
-.section p {
-  margin: 0 0 14px;
-}
-
-/* ── Figures ──────────────────────────────────────────────────────────────── */
-
-figure {
-  margin: 24px 0;
-  text-align: center;
-}
-
-figure img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-}
-
-figcaption {
-  margin-top: 12px;
-  font-size: 0.92rem;
-  color: var(--muted);
-  text-align: center;
-}
-
-figcaption strong {
+.soon-lede {
+  font-size: 1.15rem;
   color: var(--text);
+  margin: 0 0 8px;
 }
 
-.teaser img {
-  width: 100%;
-}
-
-/* ── Code block ───────────────────────────────────────────────────────────── */
-
-pre {
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 18px 20px;
-  overflow-x: auto;
-  font-size: 0.88rem;
-  line-height: 1.55;
-}
-
-code {
-  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
-}
-
-/* ── Footer ───────────────────────────────────────────────────────────────── */
-
-.footer {
-  padding: 40px 0 48px;
-  border-top: 1px solid var(--border);
-  text-align: center;
+.soon-sub {
+  font-size: 1rem;
   color: var(--muted);
-  font-size: 0.92rem;
+  margin: 0;
 }
 
-.footer p {
-  margin: 4px 0;
-}
-
-.footer .muted {
-  font-size: 0.85rem;
-}
-
-/* ── Responsive tweaks ────────────────────────────────────────────────────── */
-
-@media (max-width: 640px) {
-  .hero { padding: 48px 0 40px; }
-  .section { padding: 40px 0; }
-  .author { margin: 0 6px; }
-  .affiliations span { display: block; margin: 4px 0; }
-  .button { padding: 9px 14px; font-size: 0.88rem; }
+@media (max-width: 480px) {
+  .soon-lede { font-size: 1.05rem; }
+  .soon-sub  { font-size: 0.95rem; }
 }
